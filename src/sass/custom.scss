@@ -1,0 +1,35 @@
+body{
+    margin: 0 auto;
+    background-image: url('../../public/svg/background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.custom-section{
+    padding-top: 10vh;
+    height: 90vh;
+}
+
+
+$white: rgba(255,255,255,0.3);
+
+.custom-card {
+    width: 24%;
+    transition-timing-function: linear;
+    transition-duration: 0.2s;
+}
+
+.custom-card:hover {
+    cursor: pointer;
+    translate: 5px -5px;
+}
+
+.custom-card {
+    background: $white;
+    // border-radius: 20px;
+    border-left: 1px solid $white;
+    border-top: 1px solid $white;
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}

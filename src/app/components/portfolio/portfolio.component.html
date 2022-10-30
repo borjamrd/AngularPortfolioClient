@@ -1,0 +1,49 @@
+<div class="custom-section container">
+    <div class="container mb-2">
+        <div class="d-flex justify-content-end">
+            <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [settings]="dropdownSettings"
+                [data]="dropdownList" [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)"
+                (onDeSelect)="deSelect($event)"
+                (onDeSelectAll)="deSelectAll($event)"
+                >
+            </ng-multiselect-dropdown>
+        </div>
+
+    </div>
+
+    <div>
+        <div class="d-flex flex-row flex-wrap justify-content-between gap-2">
+            <div [routerLink]="project._id" *ngFor="let project of projects.slice(0,nProjects); index as i"
+                class="card custom-card">
+                <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills justify-content-end">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="project.github">
+                                <img src="assets/svg/github.svg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <img src="assets/img/testimg.png" class="card-img-bottom" alt="img-test">
+                <div class="card-body">
+                    <h5 class="card-title">{{project.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{project.subtitle}}</h6>
+                    <p class="card-text">{{project.short_description}}</p>
+
+                    <div class="d-flex flex-row justify-content-end gap-1">
+                        <span *ngFor="let tag of project.tags" class="badge text-light bg-secondary"> {{tag}}</span>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    </div>
+
+ 
+</div>
+<app-button-down [section]="'contact'"></app-button-down>

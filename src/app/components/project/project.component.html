@@ -1,0 +1,69 @@
+<div class="project-header mt-0 mb-3 w-100">
+    <div class="project-img">
+        <img src="assets/img/testimg.png">
+
+
+    </div>
+</div>
+<div class="container">
+    <div class="d-flex">
+        <h2>{{project.name}}</h2>
+        <ul class="nav nav-pills card-header-pills justify-content-end ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" id="github" href="project.github">
+                    Github <img src="assets/svg/github.svg">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="d-flex">
+        <div class="d-flex flex-row justify-content-start gap-1">
+            <span *ngFor="let tag of project.tags" class="badge text-light bg-secondary"> {{tag}}</span>
+        </div>
+    </div>
+    <div class="mb-2">
+        <span style="font-size: 10px ;" class="mb-1">Fecha de creación:{{createdAt}}</span>
+
+    </div>
+
+    <div>
+        <h3 class="fw-light">Descripción del proyecto</h3>
+        <p>{{project.full_description}}</p>
+    </div>
+    <div id="relatedProjects">
+
+        <h3 class="fw-light mb-2">Proyectos relacionados</h3>
+        <div class="d-flex flex-row flex-wrap justify-content-between gap-2">
+            <div (click)="goToProject(project._id)" *ngFor="let project of relatedProjects; index as i"
+                class="card custom-card">
+                <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills justify-content-end">
+
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <img src="assets/svg/github.svg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <img src="assets/img/testimg.png" class="card-img-bottom" alt="img-test">
+                <div class="card-body">
+                    <h5 class="card-title">{{project.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{project.subtitle}}</h6>
+                    <p class="card-text">{{project.short_description}}</p>
+
+                    <div class="d-flex flex-row justify-content-end gap-1">
+                        <span *ngFor="let tag of project.tags" class="badge text-light bg-secondary"> {{tag}}</span>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</div>
