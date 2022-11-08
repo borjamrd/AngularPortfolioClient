@@ -3,7 +3,7 @@ export interface ProjectModel {
     name: string,
     url: string;
     tags: [];
-    img: string;
+    projectImage: string | undefined;
     subtitle: string;
     short_description: string;
     full_description: string;

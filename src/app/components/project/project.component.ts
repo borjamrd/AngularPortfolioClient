@@ -17,7 +17,7 @@ export class ProjectComponent implements OnInit {
     name: '',
     url: '',
     tags: [],
-    img: '',
+    projectImage: '',
     subtitle: '',
     short_description: '',
     full_description: '',
@@ -34,7 +34,7 @@ export class ProjectComponent implements OnInit {
     private _projects: ProjectsService,
     private _activatedRoute: ActivatedRoute,
   ) {
-    
+
     this._activatedRoute.params.subscribe((resp: any) => {
       this.id = resp.idproject
     })
@@ -55,7 +55,7 @@ export class ProjectComponent implements OnInit {
       })
     })
 
- 
+
   }
 
   ngOnInit(): void {

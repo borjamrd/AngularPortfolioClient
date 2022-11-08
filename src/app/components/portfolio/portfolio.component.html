@@ -3,10 +3,8 @@
         <div class="d-flex justify-content-end">
             <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [settings]="dropdownSettings"
                 [data]="dropdownList" [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)"
-                (onSelectAll)="onSelectAll($event)"
-                (onDeSelect)="deSelect($event)"
-                (onDeSelectAll)="deSelectAll($event)"
-                >
+                (onSelectAll)="onSelectAll($event)" (onDeSelect)="deSelect($event)"
+                (onDeSelectAll)="deSelectAll($event)">
             </ng-multiselect-dropdown>
         </div>
 
@@ -26,7 +24,7 @@
                         </li>
                     </ul>
                 </div>
-                <img src="assets/img/testimg.png" class="card-img-bottom" alt="img-test">
+                <img src={{project.projectImage}} class="card-img-bottom" alt="img-test">
                 <div class="card-body">
                     <h5 class="card-title">{{project.name}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{project.subtitle}}</h6>
@@ -40,10 +38,10 @@
                 </div>
             </div>
         </div>
-    
+
 
     </div>
 
- 
+
 </div>
 <app-button-down [section]="'contact'"></app-button-down>

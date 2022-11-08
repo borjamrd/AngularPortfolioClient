@@ -18,7 +18,7 @@ export class PortfolioComponent implements OnInit {
     name: '',
     url: '',
     tags: [],
-    img: '',
+    projectImage: '' || undefined,
     subtitle: '',
     short_description: '',
     full_description: '',
@@ -55,8 +55,9 @@ export class PortfolioComponent implements OnInit {
           item_id: tag, item_text: tag
         })
       });
-      this.dropdownList = tagForDrwn
+      this.dropdownList = tagForDrwn;
       this.selectedItems = tagForDrwn
+
 
     })
 
@@ -76,7 +77,7 @@ export class PortfolioComponent implements OnInit {
     })
   }
 
- 
+
   ngOnInit(): void {
 
   }
