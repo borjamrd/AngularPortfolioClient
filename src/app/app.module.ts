@@ -13,7 +13,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ButtonDownComponent } from './components/button-down/button-down.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResultsComponent } from './components/results/results.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,11 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     PortfolioComponent,
     ContactComponent,
-    ButtonDownComponent
+    ButtonDownComponent,
+    ResultsComponent
   ],
   imports: [
+    ReactiveFormsModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,

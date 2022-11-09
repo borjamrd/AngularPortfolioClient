@@ -1,10 +1,21 @@
-<div class="project-header mt-0 mb-3 w-100">
+<div class="project-header mt-0 w-100">
     <div class="project-img">
         <img src="assets/img/testimg.png">
-
-
     </div>
 </div>
+<div class="bg-light py-1 mb-2">
+    <div class="container">
+        <button class="btn btn-primary rounded-pill" (click)="navigateBack()">Atrás</button>
+        <!-- <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav> -->
+    </div>
+</div>
+
 <div class="container">
     <div class="d-flex">
         <h2>{{project.name}}</h2>
@@ -26,9 +37,21 @@
 
     </div>
 
-    <div>
-        <h3 class="fw-light">Descripción del proyecto</h3>
-        <p>{{project.full_description}}</p>
+    <div class="d-flex flex-row mb-4">
+        <div class="col-6">
+            <div class="sectionDescription">
+                <h3 class="fw-light">Descripción del proyecto</h3>
+                <p>{{project.full_description}}</p>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <div class="imgProjectSection">
+                <img src={{project.projectImage}} class="imgProject" alt="project-img">
+            </div>
+
+        </div>
+
     </div>
     <div id="relatedProjects">
 
@@ -46,7 +69,7 @@
                         </li>
                     </ul>
                 </div>
-                <img src="assets/img/testimg.png" class="card-img-bottom" alt="img-test">
+                <img src={{project.projectImage}} class="card-img-bottom" alt="img-test">
                 <div class="card-body">
                     <h5 class="card-title">{{project.name}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{project.subtitle}}</h6>

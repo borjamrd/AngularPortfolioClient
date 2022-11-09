@@ -25,10 +25,31 @@
                     <a class="nav-link disabled">Contacto</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" (ngModelChange)="searchInfo()" [formControl]="search"
+                    placeholder="Busca un proyecto" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
+            <div class="d-flex flex-column cardSearch">
+                <div class="card" (click)="getDetailPage(project)" *ngFor="let project of searchProjects; index as i">
+                    <div class="d-flex">
+                        <div class="col-3">
+
+                            <img src={{project.projectImage}} class="card-img-search" alt="...">
+
+                        </div>
+                        <div class="col-9">
+                            <div class="card-body">
+                                <h6 class="card-subtitle">{{project.name}}</h6>
+                                <p class="card-text">{{project.subtitle}}</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 </nav>

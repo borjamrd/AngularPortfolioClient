@@ -18,7 +18,7 @@ export class PortfolioComponent implements OnInit {
     name: '',
     url: '',
     tags: [],
-    projectImage: '' || undefined,
+    projectImage: '',
     subtitle: '',
     short_description: '',
     full_description: '',
@@ -75,6 +75,10 @@ export class PortfolioComponent implements OnInit {
         console.log('Error en post tags: ', err)
       })
     })
+  }
+
+  seeMoreProjects() {
+    this.nProjects += 4
   }
 
 

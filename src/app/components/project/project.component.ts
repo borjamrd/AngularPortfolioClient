@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectModel } from 'src/app/models/project';
@@ -11,6 +12,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
 })
 export class ProjectComponent implements OnInit {
   id: string = ''
+  isModalOpen: boolean = false;
   img: string = ''
   project: ProjectModel = {
     _id: '',
@@ -30,31 +32,31 @@ export class ProjectComponent implements OnInit {
   constructor(
     private _projectInfo: ProjectInfoService,
     private _router: Router,
-    private _route: ActivatedRoute,
-    private _projects: ProjectsService,
     private _activatedRoute: ActivatedRoute,
+    private _projects: ProjectsService,
+    private location: Location,
+
   ) {
 
     this._activatedRoute.params.subscribe((resp: any) => {
       this.id = resp.idproject
-    })
-    this._projectInfo.getProjectInfo(this.id).subscribe({
-      next: (resp: any) => {
-        console.log(resp)
-        this.project = resp.project
-        this.tags = resp.project.tags
-        this.img = resp.project.img
-        this.createdAt = resp.project.createdAt
-        let data = {
-          tags: this.tags
-        }
-        this.getRelatedProjects(data)
-      },
-      error: ((err: any) => {
-        console.log(err)
+      this._projectInfo.getProjectInfo(this.id).subscribe({
+        next: (resp: any) => {
+          this.project = resp.project
+          this.tags = resp.project.tags
+          this.img = resp.project.img
+          this.createdAt = resp.project.createdAt
+          let data = {
+            tags: this.tags
+          }
+          this.getRelatedProjects(data)
+        },
+        error: ((err: any) => {
+          console.log(err)
+        })
       })
-    })
 
+    })
 
   }
 
@@ -72,8 +74,12 @@ export class ProjectComponent implements OnInit {
     })
   }
 
+
   goToProject(projectId: any) {
     this._router.navigate([`/${projectId}`],);
+  }
+  navigateBack(): void {
+    this.location.back()
   }
 }
 
