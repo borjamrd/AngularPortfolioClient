@@ -1,14 +1,55 @@
-<div class="container d-flex custom-section">
+<div class="custom-section">
+    <div class="container mb-4 about-section">
+        <div class="d-flex flex-row">
+            <div class="col-6">
+                <h3 class="mb-3">Sobre mi</h3>
 
-    <div class="col-4">
-        <h3>Sobre mi</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, animi? Iste eos distinctio animi
-            incidunt quidem illum quos quisquam autem quibusdam eius nemo ipsa totam provident quia, quasi dolorum
-            inventore?</p>
-        <span class="text-black-400">asdasd</span>
+                <p>Estudié marketing en inglés mientras trabajaba en <a href="https://www.europapress.es/"
+                        target="_blank">Europa Press</a> en varios departamentos; esto
+                    me ayudó muchísimo a comprender el negocio y lo importante que era la optimización de tareas.</p>
+                <p>Mis compis de carrera y yo fundamos <a href="https://mushingmarketing.com/" target="_blank">Mushing
+                        Marketing</a> en donde desarrollé con Wordpress para clientes de la talla de <a
+                        href="https://www.tecosa.es/">Tecosa</a> (Grupo Siemens).</p>
+                <p>Hice un bootcamp de desarrollo fullstack en <a href="https://www.thebridge.tech/">The Bridge</a></p>
+                <p>Actualmente estoy trabajando como desarrollador fullstack en <a href="https://www.vwgroupretail.es/"
+                        target="_blank">Volkswagen Retail Group Spain</a> para el departamento de Business Intelligence
+                    y
+                    Marketing Digital.</p>
+                <p>De pequeño quise ser arquitecto y cada vez estoy más convencido de que estoy más cerca de serlo.</p>
+
+            </div>
+            <div class="col-6">
+                <div class="d-flex justify-content-center align-items-center p-2">
+                    <img class="computer-img" src="assets/svg/man.svg" alt="">
+                </div>
+
+
+
+            </div>
+        </div>
+
     </div>
-    <div class="col-8">asd</div>
+    <div class="d-flex skills-section">
+        <div class="container d-flex flex-column align-items-center mt-4">
+            <h4 class="mb-3">Tecnologías que uso a día de hoy</h4>
+            <div class="d-flex flex-row justify-content-center flex-wrap">
+                <div class="p-2 mx-3" *ngFor="let skill of skills">
+                    <!-- <div class="col-4"> -->
+                    <img class="img-skill" src="assets/svg/skills/{{skill.img}}.svg">
+
+                    <!-- </div>
+
+                    <div class="col-8"><span class="text-medium-emphasis fs-5">{{skill.name}}</span> -->
+
+                    <!-- </div> -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
 </div>
+
 
 <app-button-down [section]="'portfolio'"></app-button-down>

@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  apiUrl: 'https://bmrd-portfolio-server.herokuapp.com'
+  production: false,
+  apiUrl: 'http://44.203.92.22'
 };

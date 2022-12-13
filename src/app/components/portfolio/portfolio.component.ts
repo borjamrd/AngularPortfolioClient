@@ -26,16 +26,17 @@ export class PortfolioComponent implements OnInit {
     github: ''
   }
   dropdownList: any = [];
-  selectedItems: any = [{
-    item_id: 0, item_text: ''
-  }];
+  selectedItems: any = [];
   dropdownSettings: IDropdownSettings = {
     singleSelection: false,
     idField: 'item_id',
     textField: 'item_text',
-    selectAllText: 'Select All',
-    unSelectAllText: 'UnSelect All',
+    selectAllText: 'Seleccionar todos',
+    unSelectAllText: 'Quitar selección',
     itemsShowLimit: 3,
+    searchPlaceholderText: 'Buscar',
+    noDataAvailablePlaceholderText: 'No hay tags disponibles',
+    noFilteredDataAvailablePlaceholderText: 'Tags',
     allowSearchFilter: true
   }
   constructor(
@@ -56,7 +57,7 @@ export class PortfolioComponent implements OnInit {
         })
       });
       this.dropdownList = tagForDrwn;
-      this.selectedItems = tagForDrwn
+      // this.selectedItems = tagForDrwn
 
 
     })
@@ -86,7 +87,6 @@ export class PortfolioComponent implements OnInit {
 
   }
   onItemSelect(item: any) {
-    console.log(this.selectedItems)
     let tags: any = []
     this.selectedItems.forEach((item: any) => {
       tags.push(item.item_id)

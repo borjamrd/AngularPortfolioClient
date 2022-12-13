@@ -1,34 +1,45 @@
-<div class="container d-flex custom-section">
+<div class="container d-flex flex-row custom-section">
 
-    <div class="col-6 p-2 d-flex flex-column justify-content-center">
-        <h1>HI,I'm Borja web developer</h1>
-        <span class="text-black-50">Fullstack developer & marketing specialist</span>
+    <div class="col-7 col-sm-12 p-2 d-flex flex-column justify-content-center">
+
+        <img class="img-welcome mb-2" src="assets/svg/welcome.svg" alt="">
+        <h1 class="mb-4">Soy Borja Muñoz Ruiz-Dana</h1>
+        <span class="text-black-50 fs-4 mb-1">Fullstack developer & marketing specialist</span>
         <span class="text-medium-emphasis">Desarrollador fullstack especializado en stack MEARN y MEAN con enfoque en
-            aplicaciones de optimización de recursos y desarrollo empresarial</span>
+            aplicaciones de optimización de recursos y desarrollo empresarial de alto nivel competitivo... bla, bla,
+            bla; en
+            fin, te ayudo a hacer las cosas más fáciles en menos tiempo.</span>
         <div class="d-flex flex-row justify-content-start mt-3">
             <button class="btn btn-primary me-2">CV</button>
-            <button class="btn btn-primary">portfolio </button>
+            <button class="btn btn-primary"><a href="/#portfolio">Portfolio</a> </button>
 
         </div>
 
     </div>
-    <div class="col-5 d-flex flex-row align-items-center p-2">
-        <div class="card custom-card" style="width: 18rem;">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+    <div class="col-5 col-sm-12 d-flex flex-row align-items-center justify-content-end p-4">
+        <div [routerLink]="project._id" [ngClass]="i === 0 ? 'card custom-card prject':'card custom-card-two project'"
+            *ngFor="let project of projects.slice(0,2); index as i" class="card custom-card">
+            <div class="card-header">
+                <ul class="nav nav-pills card-header-pills justify-content-end">
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="project.github">
+                            <img src="assets/svg/github.svg">
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div class="card custom-card-two" style="width: 18rem;">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <img src={{project.projectImage}} class="card-img-bottom" alt="img-test">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+                <h5 class="card-title">{{project.name}}</h5>
+                <h6 class="card-subtitle fw-light mb-2 text-muted">{{project.subtitle}}</h6>
+                <p class="card-text">{{project.short_description}}</p>
 
+                <div class="d-flex flex-row justify-content-end gap-1">
+                    <span *ngFor="let tag of project.tags" class="badge text-light bg-secondary"> {{tag}}</span>
+
+
+                </div>
             </div>
         </div>
 

@@ -1,7 +1,14 @@
-.custom-card, .custom-card-two{
+.custom-card,
+.custom-card-two {
     position: relative;
+    width: 18rem;
 }
-.custom-card{
+
+.custom-card-two {
     top: 4rem;
-    left: 4rem;
+    right: 2rem;
+}
+
+.img-welcome {
+    width: 80%;
 }

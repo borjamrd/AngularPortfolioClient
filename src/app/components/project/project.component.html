@@ -3,7 +3,7 @@
         <img src="assets/img/testimg.png">
     </div>
 </div>
-<div class="bg-light py-1 mb-2">
+<div class="bg-light py-1 mb-4">
     <div class="container">
         <button class="btn btn-primary rounded-pill" (click)="navigateBack()">Atrás</button>
         <!-- <nav aria-label="breadcrumb">
@@ -21,7 +21,7 @@
         <h2>{{project.name}}</h2>
         <ul class="nav nav-pills card-header-pills justify-content-end ms-auto">
             <li class="nav-item">
-                <a class="nav-link" id="github" href="project.github">
+                <a class="nav-link" target="_blank" id="github" href={{project.github}}>
                     Github <img src="assets/svg/github.svg">
                 </a>
             </li>
@@ -55,8 +55,8 @@
     </div>
     <div id="relatedProjects">
 
-        <h3 class="fw-light mb-2">Proyectos relacionados</h3>
-        <div class="d-flex flex-row flex-wrap justify-content-between gap-2">
+        <h3 class="fw-light mb-4">Proyectos relacionados</h3>
+        <div class="d-flex flex-row flex-wrap justify-content-start gap-2">
             <div (click)="goToProject(project._id)" *ngFor="let project of relatedProjects; index as i"
                 class="card custom-card">
                 <div class="card-header">
