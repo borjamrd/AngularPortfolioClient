@@ -15,6 +15,7 @@ import { ButtonDownComponent } from './components/button-down/button-down.compon
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultsComponent } from './components/results/results.component';
+import { ManagementComponent } from './components/management/management.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ResultsComponent } from './components/results/results.component';
     PortfolioComponent,
     ContactComponent,
     ButtonDownComponent,
-    ResultsComponent
+    ResultsComponent,
+    ManagementComponent
   ],
   imports: [
     ReactiveFormsModule,

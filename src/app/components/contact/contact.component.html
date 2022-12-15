@@ -1,31 +1,31 @@
-<div class="custom-section container">
-    <div class="mb-4">
-        <h3>Contacto</h3>
-        <span class="text-black-50 fs-4 mb-1">Ya que estás por aquí cotilleado, déjame tu contacto, a lo mejor nos
-            podemos
-            echar una
-            mano... o una
-            🍺</span>
-    </div>
+<div class="custom-section p-3 p-sm-2">
+    <div class="container">
+        <div class="mb-4">
+            <h3>Contacto</h3>
+            <span class="text-black-50 fs-4 mb-1">Ya que estás por aquí, déjame tu contacto, a lo mejor nos
+                podemos
+                echar una
+                mano... o una
+                🍺</span>
+        </div>
 
 
-    <form action="post">
-        <div class="d-flex p-1 gap-2">
-            <div class="col-lg-3">
-                <input class="form-control form-control-lg" placeholder="Nombre" type="text">
-            </div>
-            <div class="col-lg-3">
-                <input class="form-control form-control-lg" placeholder="Apellidos" type="text">
-            </div>
-            <div class="col-lg-3"><input class="form-control form-control-lg" type="text" placeholder="Correo"
-                    aria-label="email"></div>
-            <div class="col-lg-3">
+        <form [formGroup]="leadForm" (ngSubmit)="submitLeadInfo(leadForm.value)">
+            <div class="d-flex flex-md-row flex-column gap-2 mb-2">
+                <input class="form-control form-control-lg" formControlName="name" placeholder="Nombre" type="text">
+                <input class="form-control form-control-lg" formControlName="lastname" placeholder="Apellidos"
+                    type="text">
+                <input class="form-control form-control-lg" formControlName="email" type="email" placeholder="Correo"
+                    aria-label="email">
                 <button type="submit" class="btn btn-primary btn-lg w-100">Enviar</button>
             </div>
+            <div *ngIf="formIsSend" class="alert alert-success" role="alert">
+                Información enviada correctamente 🚀
+
+            </div>
+        </form>
 
 
-
-        </div>
-    </form>
+    </div>
 
 </div>
