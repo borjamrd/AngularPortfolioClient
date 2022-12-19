@@ -16,7 +16,7 @@ export class PortfolioComponent implements OnInit {
   project: ProjectModel = {
     _id: '',
     name: '',
-    url: '',
+    urlProject: '',
     tags: [],
     projectImage: '',
     subtitle: '',

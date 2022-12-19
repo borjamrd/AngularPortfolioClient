@@ -17,7 +17,7 @@ export class ProjectComponent implements OnInit {
   project: ProjectModel = {
     _id: '',
     name: '',
-    url: '',
+    urlProject: '',
     tags: [],
     projectImage: '',
     subtitle: '',

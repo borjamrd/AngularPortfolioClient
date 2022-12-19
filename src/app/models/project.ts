@@ -1,7 +1,7 @@
 export interface ProjectModel {
     _id: string,
     name: string,
-    url: string;
+    urlProject: string;
     tags: [];
     projectImage: string | undefined;
     subtitle: string;
