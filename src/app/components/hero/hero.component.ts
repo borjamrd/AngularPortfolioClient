@@ -9,6 +9,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
 })
 export class HeroComponent implements OnInit {
   projects: ProjectModel[] = []
+
   constructor(
     private _projectsService: ProjectsService
   ) {
@@ -20,6 +21,11 @@ export class HeroComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
   }
+
+
+
 
 }

@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
-    background-color: white;
-    // background-image: url('../../public/svg/background.svg');
+    // background-color: #F5F5F5;
+    background-image: url('../assets/svg/back.webp');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -12,6 +12,14 @@ body {
     min-height: 90vh;
     justify-content: center;
     align-items: center;
+}
+
+.img-skill {
+    height: 50px;
+}
+
+.computer-img {
+    width: 10rem
 }
 
 @keyframes append-animate {
@@ -73,6 +81,41 @@ $white: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
 }
 
+
+
+//project section
+
+.project-img {
+    height: 15vh;
+    opacity: 90%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+}
+
+.name-section h2 {
+    color: black;
+}
+
+.imgProjectSection {
+    width: 100%;
+    border-radius: 13px;
+
+}
+
+.imgProject {
+    object-fit: cover;
+    width: 100%;
+    max-height: 350px;
+    border-radius: 14px;
+}
+
+.sectionDescription {
+    padding-right: 70px;
+    max-height: 400px;
+    overflow-y: auto;
+}
 
 @media only screen and (max-width: 600px) {
     .custom-card {

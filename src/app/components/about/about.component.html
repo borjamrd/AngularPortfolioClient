@@ -5,26 +5,19 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h3 class="mb-3">Sobre mi</h3>
-
-                        <p class="text-black-50">Estudié marketing en inglés mientras trabajaba en <a
-                                href="https://www.europapress.es/" target="_blank">Europa Press</a>, la agencia de
-                            noticias privada más grande de España;
-                            comprendí importancia de la optimización de tareas y gestión de los recursos</p>
-                        <p class="text-black-50">Mis compis de carrera y yo fundamos <a
-                                href="https://mushingmarketing.com/" target="_blank">Mushing
-                                Marketing</a> en donde desarrollé con Wordpress para clientes de la talla de <a
-                                href="https://www.tecosa.es/">Tecosa</a> (Grupo Siemens).</p>
-                        <p class="text-black-50">Hice un bootcamp de desarrollo fullstack en <a
+                        <p class="text-black-50 fs-4">Estudié la carrera mientras trabajaba en <a
+                                href="https://www.europapress.es/" target="_blank">Europa Press</a> y mis compis de
+                            universidad y yo fundamos <a href="https://mushingmarketing.com/" target="_blank">Mushing
+                                Marketing</a>, una agencia de marketing digital en donde desarrollé webs con Wordpress
+                            (un ejemplo es <a href="https://www.tecosa.es/">Tecosa</a> del grupo Siemens).</p>
+                        <p class="text-black-50 fs-4">Hice un bootcamp de desarrollo fullstack en <a target="_blank"
                                 href="https://www.thebridge.tech/">The
-                                Bridge</a></p>
-                        <p class="text-black-50">Actualmente estoy trabajando como desarrollador fullstack en <a
+                                Bridge</a>.</p>
+                        <p class="text-black-50 fs-4">Actualmente soy desarrollador fullstack en <a
                                 href="https://www.vwgroupretail.es/" target="_blank">Volkswagen</a>
                             para el departamento de Business Intelligence
                             y
                             Marketing Digital.</p>
-                        <p class="text-black-50">De pequeño quise ser arquitecto y cada vez estoy más convencido de que
-                            estoy más cerca de
-                            serlo.</p>
 
                     </div>
                     <div class="col-md-6">
@@ -38,21 +31,7 @@
                 </div>
 
             </div>
-            <div class="d-flex skills-section mt-4">
-                <div class="container d-flex flex-column align-items-center mt-4">
-                    <h4 class="mb-3">Tecnologías que uso a día de hoy</h4>
-                    <div class="d-flex flex-row justify-content-center flex-wrap">
-                        <div class="p-2 mx-3" *ngFor="let skill of skills">
-                            <div class="d-inline-block" tabindex="0" data-toggle="tooltip" title={{skill.name}}>
-                                <img class="img-skill" src="assets/svg/skills/{{skill.img}}.svg">
-                            </div>
 
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
 
@@ -60,4 +39,4 @@
 </div>
 
 
-<app-button-down [section]="'portfolio'"></app-button-down>
+<app-button-down [section]="'tech'"></app-button-down>
