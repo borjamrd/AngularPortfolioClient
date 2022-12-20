@@ -50,6 +50,7 @@ export class ProjectComponent implements OnInit {
             tags: this.tags
           }
           this.getRelatedProjects(data)
+          window.scrollTo(0, 0)
         },
         error: ((err: any) => {
           console.log(err)
