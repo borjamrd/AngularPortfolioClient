@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiUrl: 'https://44.203.92.22'
+  production: true,
+  apiUrl: 'https://angularportfolioserver-production.up.railway.app'
 };
