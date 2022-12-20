@@ -42,11 +42,17 @@ export class PortfolioComponent implements OnInit {
   constructor(
     private _projectsService: ProjectsService
   ) {
+
+    this.getAllProjects()
+
+
+
+  }
+  getAllProjects() {
     this._projectsService.getAllProjects().subscribe((projects: any) => {
       console.log('Projects', projects)
       this.projects = projects.projects
       this.projects.forEach(project => {
-        // console.log(project.tags)
         this.tags.push(...project.tags)
       });
       this.tags = new Set(this.tags)
@@ -57,12 +63,8 @@ export class PortfolioComponent implements OnInit {
         })
       });
       this.dropdownList = tagForDrwn;
-      // this.selectedItems = tagForDrwn
-
 
     })
-
-
   }
 
   getProjectByTag(tags: any) {
@@ -70,7 +72,6 @@ export class PortfolioComponent implements OnInit {
       next: ((resp: any) => {
         console.log('Projects by tag', resp)
         this.projects = resp.projects
-        // this.tags = resp.tags
       }),
       error: ((err: any) => {
         console.log('Error en post tags: ', err)
@@ -109,22 +110,29 @@ export class PortfolioComponent implements OnInit {
     this.getProjectByTag(data)
   }
   deSelect(item: any) {
-    let tags: any = []
-    console.log(this.selectedItems)
-    this.selectedItems.forEach((item: any) => {
-      tags.push(item.item_id)
-    })
 
-    let data = {
-      tags: tags
+
+    if (this.selectedItems.length !== 0) {
+      let tags: any = []
+      console.log(this.selectedItems)
+      this.selectedItems.forEach((item: any) => {
+        tags.push(item.item_id)
+      })
+
+      let data = {
+        tags: tags
+      }
+      this.getProjectByTag(data)
+    } else {
+      this.getAllProjects()
     }
-    this.getProjectByTag(data)
+
   }
   deSelectAll(item: any) {
     // console.log(this.tags)
     let data = {
       tags: []
     }
-    this.getProjectByTag(data)
+    this.getAllProjects()
   }
 }
