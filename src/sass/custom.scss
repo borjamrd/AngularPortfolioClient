@@ -135,4 +135,10 @@ $white: rgba(255, 255, 255, 0.3);
         min-height: 35vh;
     }
 
+    .sectionDescription {
+        padding-right: 70px;
+        max-height: fit-content;
+        overflow-y: none;
+    }
+
 }
