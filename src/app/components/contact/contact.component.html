@@ -10,7 +10,7 @@
         </div>
 
 
-        <form [formGroup]="leadForm" (ngSubmit)="submitLeadInfo(leadForm.value)">
+        <form class="mb-4" [formGroup]="leadForm" (ngSubmit)="submitLeadInfo(leadForm.value)">
             <div class="d-flex flex-md-row flex-column gap-2 mb-2">
                 <input class="form-control form-control-lg" formControlName="name" placeholder="Nombre" type="text">
                 <input class="form-control form-control-lg" formControlName="lastname" placeholder="Apellidos"
@@ -24,6 +24,14 @@
 
             </div>
         </form>
+        <div>
+            <span class="text-black-50 fs-4 mb-1">O, si lo prefieres, puedes mandarme un whatsapp haciendo click <a
+                    href="https://api.whatsapp.com/send?text=Hola Borja! ¿Qué tal? He visto tu web y me gustaría contactar contigo.&phone=+34722111211&abid=+34722111211"
+                    target="_blank">
+                    aquí
+                </a>
+            </span>
+        </div>
 
 
     </div>
