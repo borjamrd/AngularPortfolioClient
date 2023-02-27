@@ -1,0 +1,75 @@
+<div class="custom-section p-3 p-sm-2">
+    <div class="container">
+        <div>
+            <h2 class="mb-4">Recent projects</h2>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-8">
+                <div class="me-2">
+                    <span class="text-black-50 fs-5">
+                        Here you have some of my projects. You can access to the original deployed version or github
+                        repository by making click on each project. Each one has the proper description and the stacks
+                        used.
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ng-multiselect-dropdown class="multiselect" placeholder="Search by tags" [settings]="dropdownSettings"
+                    [data]="dropdownList" [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)"
+                    (onSelectAll)="onSelectAll($event)" (onDeSelect)="deSelect($event)"
+                    (onDeSelectAll)="deSelectAll($event)">
+                </ng-multiselect-dropdown>
+
+            </div>
+        </div>
+        <!-- <div class="d-flex justify-content-between gap-2 mb-2">
+           
+
+           
+
+        </div> -->
+        <div>
+            <div class="d-flex flex-row flex-wrap justify-content-start mb-4 gap-2">
+                <div [routerLink]="['projects/' + project._id]" *ngFor="let project of projects; index as i"
+                    class="card custom-card">
+                    <!-- 
+                    <div class="card-header">
+                        <ul class="nav nav-pills card-header-pills justify-content-end">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="project.github">
+                                    <img src="assets/svg/github.svg">
+                                </a>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <img src={{project.projectImage}} class="rounded-top card-img-bottom" alt="img-test">
+                    <div class="card-body">
+                        <h4 class="card-title">{{project.name}}</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{project.subtitle}}</h6>
+                        <p class="card-text">{{project.short_description}}</p>
+
+                        <div class="d-flex flex-row flex-wrap justify-content-end gap-1">
+                            <span *ngFor="let tag of project.tags" class="badge text-light bg-secondary">
+                                {{tag}}</span>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- <div *ngIf="nProjects < projects.length" class="d-flex justify-content-center">
+                <button class="btn btn-primary" (click)="seeMoreProjects()">Load more</button>
+
+            </div> -->
+
+
+        </div>
+
+    </div>
+
+
+</div>
+<app-button-down [section]="'management'"></app-button-down>

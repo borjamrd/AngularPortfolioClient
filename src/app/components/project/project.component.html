@@ -1,0 +1,101 @@
+<div class="custom-section p-3 p-sm-2">
+    <div style="margin-top: 4rem" class="container">
+        <!-- <div class="mt-0 w-100">
+            <div class="project-img">
+
+            </div>
+        </div> -->
+        <div class="py-1 mb-4">
+            <div>
+                <button class="btn btn-secondary text-light" (click)="navigateBack()">
+
+                    <i class="bi bi-chevron-double-left"></i>
+                    Back</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="mb-2">{{project.name}}</h1>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex flex-row align-items-center justify-content-end gap-2">
+
+                    <a title="Proyecto" class="nav-link" target="_blank" id="github" href={{project.urlProject}}>
+                        <button class="btn btn-dark">WATCH FULL PROJECT</button>
+                    </a>
+                    <a title="Repositorio" class="nav-link" target="_blank" id="github" href={{project.github}}>
+                        <button class="btn btn-primary"> <img src="assets/svg/github.svg">
+                        </button>
+                    </a>
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="d-flex mb-4">
+            <div class="d-flex flex-row flex-wrap justify-content-start gap-1">
+                <span *ngFor="let tag of project.tags" class="badge text-light bg-secondary"> {{tag}}</span>
+            </div>
+        </div>
+
+
+        <div class="row flex-sm-row mb-4">
+            <div class="col-sm-6">
+                <div class="sectionDescription">
+                    <h3 class="text-black ">Project description</h3>
+                    <p class="text-black-50 fs-5 me-sm-4">{{project.full_description}}</p>
+
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="imgProjectSection mb-4 rounded">
+
+                    <img src={{project.projectImage}} class="imgProject" alt="project-img">
+
+                </div>
+
+            </div>
+
+        </div>
+        <div id="relatedProjects" class="mb-4">
+
+            <h3 class="text-black mb-4">Related projects by tech used</h3>
+            <div class="d-flex flex-row flex-wrap justify-content-start gap-2">
+                <div (click)="goToProject(project._id)" *ngFor="let project of relatedProjects; index as i"
+                    class="card custom-card">
+                    <!-- <div class="card-header">
+                        <ul class="nav nav-pills card-header-pills justify-content-end">
+
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <img src="assets/svg/github.svg">
+                                </a>
+                            </li>
+                        </ul>
+                    </div> -->
+                    <img src={{project.projectImage}} class="card-img-bottom" alt="img-test">
+                    <div class="card-body">
+                        <h4 class="card-title">{{project.name}}</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{project.subtitle}}</h6>
+                        <p class="card-text">{{project.short_description}}</p>
+
+                        <div class="d-flex flex-row flex-wrap justify-content-end gap-1">
+                            <span *ngFor="let tag of project.tags" class="badge text-light bg-secondary">
+                                {{tag}}</span>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="custom-section p-3 p-sm-2">
+    <div class="container">
+        <div class="mb-4">
+            <h2>Contact</h2>
+            <span class="text-black-50 fs-4 mb-1">Since you're here, leave me your contact, maybe we can lend a hand...
+                or a
+                🍺</span>
+        </div>
+
+
+        <form class="mb-4" [formGroup]="leadForm" (ngSubmit)="submitLeadInfo(leadForm.value)">
+            <div class="d-flex flex-md-row flex-column gap-2 mb-2">
+                <input class="form-control form-control-lg" formControlName="name" placeholder="Name" type="text">
+                <input class="form-control form-control-lg" formControlName="lastname" placeholder="Surname"
+                    type="text">
+                <input class="form-control form-control-lg" formControlName="email" type="email" placeholder="Email"
+                    aria-label="email">
+                <button type="submit" class="btn btn-primary btn-lg w-100">Send</button>
+            </div>
+            <div *ngIf="formIsSend" class="alert alert-success" role="alert">
+                Information on way🚀
+
+            </div>
+        </form>
+        <div>
+            <span class="text-black-50 fs-4 mb-1">
+                Or, if you prefer, you can send me a whatsapp through this
+                <a href="https://api.whatsapp.com/send?text=Hola Borja! ¿Qué tal? He visto tu web y me gustaría contactar contigo.&phone=+34722111211&abid=+34722111211"
+                    target="_blank">
+                    link
+                </a>
+            </span>
+        </div>
+
+
+    </div>
+
+</div>

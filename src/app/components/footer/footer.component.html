@@ -1,0 +1,68 @@
+<div id="footer" class="text-bg-dark">
+    <!-- <div class="container"> -->
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="row w-100 mt-4 mb-4">
+            <div class="col-6">
+                <div class="d-flex flex-column align-items-end">
+                    <div class="d-flex flex-column align-items-center mb-1">
+                        <a class="navbar-brand" href="#"><img class="profile-pic" src="assets/img/profile.jpg"
+                                height="40px"></a>
+                        <a href="#about"><span>About me</span></a>
+
+                    </div>
+                    <div class="d-flex flex-row gap-2">
+                        <span>
+                            <a href="https://github.com/borjamrd" target="_blank">
+                                <img src="assets/svg/github-footer.svg">
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://www.linkedin.com/in/borjamunozruiz/" target="_blank">
+                                <img src="assets/svg/linkedin.svg">
+
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://api.whatsapp.com/send?text=Hola Borja! ¿Qué tal? He visto tu web y me gustaría contactar contigo.&phone=+34722111211&abid=+34722111211"
+                                target="_blank">
+                                <img src="assets/svg/whatsapp.svg">
+                            </a>
+                        </span>
+                        <span>
+                            <a href="https://www.instagram.com/borjamrd/" target="_blank">
+                                <img src="assets/svg/instagram.svg">
+                            </a>
+                        </span>
+                        <span>
+                            <a href="mailto: borjamrd1@gmail.com">
+                                <img src="assets/svg/email.svg">
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <div class="d-flex flex-column w-100">
+                    <span>Last projects</span>
+
+                    <span class="text-white-50" style="cursor: pointer;" [routerLink]="project._id"
+                        *ngFor="let project of projects.slice(0,3)">{{project.name}}</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="border-top border-white-50 pt-4 pb-4 d-flex justify-content-center">
+
+            <span>
+                This portfolio is made with Angular, you can access to the github repository by making click
+                <a href="https://github.com/borjamrd/AngularPortfolioClient" target="_blank">here</a></span>
+
+        </div>
+    </div>
+
+
+</div>

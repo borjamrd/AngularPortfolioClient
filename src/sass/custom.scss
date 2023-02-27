@@ -1,0 +1,237 @@
+$white: rgba(255, 255, 255, 0.3);
+
+
+body {
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    // background-color: #F5F5F5;
+    background-image: url('../assets/svg/back.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+h1.xxl {
+    font-size: 5.5rem;
+    line-height: 4.5rem;
+}
+
+.personal-img {
+    margin-left: -10rem;
+    z-index: 0;
+    height: 40rem;
+    width: 40rem;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+
+
+
+.custom-section {
+    display: flex;
+    padding-top: 10vh;
+    min-height: 83vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-progress {
+    height: 20px;
+    display: flex;
+    white-space: nowrap;
+    align-items: end;
+    justify-content: end;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #00D1B2;
+    width: var(--scroll-per);
+    z-index: 10;
+    border-radius: 0 4px 4px 0;
+}
+
+.custom-progress span {
+    padding: 1rem;
+}
+
+.img-skill {
+    height: 50px;
+}
+
+.computer-img {
+    width: 10rem
+}
+
+@keyframes append-animate {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.github-profile {
+    height: 6.5rem;
+    width: 6.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.project {
+    animation: append-animate .2s linear,
+}
+
+.contribution-chart {
+    height: 300px;
+    width: 100%;
+}
+
+
+
+.custom-card {
+    width: 25.5rem;
+    transition-timing-function: linear;
+    transition-duration: 0.2s;
+}
+
+.card-img-bottom {
+    height: 16rem;
+    object-fit: cover;
+}
+
+.custom-card:hover {
+    cursor: pointer;
+    translate: 5px -5px;
+}
+
+.notion-video {
+    border-radius: 14px;
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+}
+
+.custom-card {
+    background: $white;
+    // border-radius: 20px;
+    border-left: 1px solid $white;
+    border-top: 1px solid $white;
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.multiselect {
+    width: 25%;
+}
+
+#footer {
+    min-height: 30vh;
+}
+
+.profile-pic {
+    border-radius: 25px;
+}
+
+
+
+//project section
+
+// .project-img {
+//     height: 15vh;
+//     opacity: 90%;
+//     width: 100%;
+//     margin: 0;
+//     padding: 0;
+//     object-fit: cover;
+// }
+
+.name-section h2 {
+    color: black;
+}
+
+.imgProjectSection {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(5px) !important;
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.imgProject {
+    object-fit: cover;
+    width: 100%;
+    max-height: 350px;
+    border-radius: 14px;
+}
+
+.sectionDescription {
+    // padding-right: 70px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.btn-primary {
+    color: white !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .custom-card {
+        width: 100%;
+    }
+
+    .multiselect {
+        width: 100%;
+    }
+
+    #footer {
+        min-height: 35vh;
+    }
+
+    .sectionDescription {
+        // padding-right: 70px;
+        max-height: fit-content;
+        overflow-y: none;
+    }
+
+
+    h1.xxl {
+        margin-top: -1rem;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+
+    .personal-img {
+        margin: auto;
+        height: 17rem;
+        width: 17rem;
+
+    }
+
+    .contribution-chart {
+        height: 400px;
+        width: 100%;
+    }
+
+
+}

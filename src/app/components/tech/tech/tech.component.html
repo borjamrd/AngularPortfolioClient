@@ -1,0 +1,96 @@
+<div class="custom-section p-3 p-sm-2">
+    <div class="container">
+        <div class="d-flex skills-section mt-4">
+            <div class="d-flex flex-column align-items-center mt-4">
+                <h2 class="mb-4">Contributions</h2>
+                <div class="row flex-column flex-sm-row justify w-100">
+                    <div class="col-sm-6">
+                        <div class="card custom-card mb-4 ms-auto">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img class="github-profile" src="assets/img/profile.png" alt="">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="ps-4 d-flex flex-column">
+                                            <span class="fw-semibold fs-4">{{total}} <span
+                                                    class="text-secondary">contributions</span></span>
+                                            <span>@borjamrd</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <a href="https://github.com/borjamrd" target="_blank" class="stretched-link"></a>
+                            </div>
+
+                        </div>
+                        <div class="d-flex">
+                            <div class="d-flex mb-4">
+                                <chart-personal-contributions
+                                    (total)="changeTotal($event)"></chart-personal-contributions>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card custom-card mb-4">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="col-4">
+                                        <img class="github-profile" src="assets/img/profesionalgit.png" alt="">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="ps-4 d-flex flex-column">
+                                            <span class="fw-semibold fs-4">{{totalPro}} <span
+                                                    class="text-secondary">contributions</span></span>
+                                            <span>@borjamunozvw</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <a href="https://github.com/borjamunozvw" target="_blank" class="stretched-link"></a>
+
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="d-flex mb-4">
+                                <chart-pro-contributions (total)="changeTotalPro($event)"></chart-pro-contributions>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- <div class="d-flex flex-row justify-content-center w-100 gap-2 mb-4">
+
+                 
+              
+                </div> -->
+
+
+
+
+                <h5 class="mt-4 text-black-50">Some technologies that I currently use</h5>
+
+                <div class="d-flex flex-row justify-content-center flex-wrap">
+                    <div class="p-2 mx-3" *ngFor="let skill of skills">
+                        <div class="d-inline-block" tabindex="0" data-toggle="tooltip" title={{skill.name}}>
+                            <img class="img-skill" src="assets/svg/skills/{{skill.img}}.svg">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-button-down [section]="'portfolio'"></app-button-down>
