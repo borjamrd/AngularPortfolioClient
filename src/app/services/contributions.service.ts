@@ -32,7 +32,7 @@ export class ContributionsService {
 
     const headers = new HttpHeaders({
       'Content-type': 'application/json',
-      Authorization: `Bearer ${environment.githubTokenPro}`
+      Authorization: `Bearer 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`
     })
 
     return this.http.post('https://api.github.com/graphql', { query }, { headers })
@@ -58,7 +58,7 @@ export class ContributionsService {
 
     const headers = new HttpHeaders({
       'Content-type': 'application/json',
-      Authorization: `Bearer ${environment.githubTokenPersonal}`
+      Authorization: `Bearer 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`
     })
 
     return this.http.post('https://api.github.com/graphql', { query }, { headers })
