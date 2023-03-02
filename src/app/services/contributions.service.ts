@@ -58,7 +58,7 @@ export class ContributionsService {
 
     const headers = new HttpHeaders({
       'Content-type': 'application/json',
-      Authorization: `Bearer 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`
+      Authorization: `Bearer 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`
     })
 
     return this.http.post('https://api.github.com/graphql', { query }, { headers })
