@@ -22,24 +22,11 @@ export class ChartProContributionsComponent implements OnInit {
 
 
     this._cService.getProfessionalContributions().subscribe((resp: any) => {
-      // console.log(resp.data.user.contributionsCollection.contributionCalendar.totalContributions)
-      this.total.emit(resp.data.user.contributionsCollection.contributionCalendar.totalContributions);
-      const weeks = resp.data.user.contributionsCollection.contributionCalendar.weeks;
-      const contributionsByDay = weeks
-        .flatMap((week: any) => week.contributionDays)
-        .reduce((accumulator: any, current: any) => {
-          const date = current.date
-          const count = current.contributionCount;
-          if (count > 0) {
-            accumulator[date] = count
-          }
-          return accumulator
-        }, {})
-
-      this.labels = Object.keys(contributionsByDay)
-      this.data = Object.values(contributionsByDay)
-
-      this.createChart();
+      console.log(resp)
+      this.labels = resp.labels
+      this.data = resp.data
+      this.total.emit(resp.total)
+      this.createChart()
     })
 
   }

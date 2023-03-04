@@ -22,22 +22,11 @@ export class ChartContributionsComponent implements OnInit {
 
 
     this._cService.getPersonalContributions().subscribe((resp: any) => {
-      this.total.emit(resp.data.user.contributionsCollection.contributionCalendar.totalContributions);
-      this.total = resp.data.user.totalContributions
-      const weeks = resp.data.user.contributionsCollection.contributionCalendar.weeks;
-      const contributionsByDay = weeks
-        .flatMap((week: any) => week.contributionDays)
-        .reduce((accumulator: any, current: any) => {
-          const date = current.date
-          const count = current.contributionCount;
-          if (count > 0) {
-            accumulator[date] = count
-          }
-          return accumulator
-        }, {})
+      console.log(resp)
 
-      this.labels = Object.keys(contributionsByDay)
-      this.data = Object.values(contributionsByDay)
+      this.labels = resp.labels
+      this.data = resp.data
+      this.total.emit(resp.total)
 
       this.createChart();
     })
@@ -60,7 +49,7 @@ export class ChartContributionsComponent implements OnInit {
         ]
       },
       options: {
-        // responsive: true,
+        responsive: true,
         plugins: {
           legend: {
             display: false //This will do the task
