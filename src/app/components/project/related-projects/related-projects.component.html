@@ -1,0 +1,31 @@
+<div id="relatedProjects" class="mb-4">
+
+    <h3 class="text-black mb-4">Related projects by tech used</h3>
+
+    <ng-container *ngIf="isDataLoading; else relProjectSection">
+        <project-list-placeholder [nProjects]="3"></project-list-placeholder>
+
+    </ng-container>
+    <ng-template #relProjectSection>
+        <div class="d-flex flex-row flex-wrap justify-content-start gap-2">
+            <div (click)="goToProject(project._id)" *ngFor="let project of relatedProjects; index as i"
+                class="card custom-card">
+                <img src={{project.projectImage}} class="card-img-bottom" alt="img-test">
+                <div class="card-body">
+                    <h4 class="card-title">{{project.name}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{project.subtitle}}</h6>
+                    <p class="card-text">{{project.short_description}}</p>
+
+                    <div class="d-flex flex-row flex-wrap justify-content-end gap-1">
+                        <span *ngFor="let tag of project.tags" class="badge text-dark bg-dark bg-opacity-25">
+                            {{tag}}</span>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ng-template>
+
+</div>

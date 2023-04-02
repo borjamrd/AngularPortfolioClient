@@ -26,8 +26,8 @@ export class HeaderComponent implements OnInit {
     if (this.search.value !== '') {
       this._searchService.searchHeader(data).subscribe({
         next: ((resp: any) => {
-          console.log(resp)
           this.searchProjects = resp.projects
+          console.log(this.searchProjects)
         }),
         error: ((err: any) => {
           console.error('error in search bar', err)

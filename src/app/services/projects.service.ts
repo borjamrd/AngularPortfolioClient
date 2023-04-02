@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class ProjectsService {
   urlProjects: string = environment.apiUrl + '/projects';
   prov_url_tags: string = environment.apiUrl + '/projects/tags';
+  prov_url_related: string = environment.apiUrl + '/projects/related';
   constructor(
     private _http: HttpClient
   ) {
@@ -19,6 +20,9 @@ export class ProjectsService {
   }
   getProjectByTag(data: any) {
     return this._http.post(this.prov_url_tags, data)
+  }
+  getRelatedProject(data: any) {
+    return this._http.post(this.prov_url_related, data)
   }
 
 }

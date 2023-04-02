@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectModel } from 'src/app/models/project';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,6 +11,7 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 })
 export class PortfolioComponent implements OnInit {
   data: any;
+  isDataLoading: boolean = false
   tags: any = []
   nProjects = 4;
   projects: ProjectModel[] = []
@@ -42,41 +44,48 @@ export class PortfolioComponent implements OnInit {
   constructor(
     private _projectsService: ProjectsService
   ) {
-
     this.getAllProjects()
-
-
-
   }
   getAllProjects() {
-    this._projectsService.getAllProjects().subscribe((projects: any) => {
-      console.log('Projects', projects)
-      this.projects = projects.projects
-      this.projects.forEach(project => {
-        this.tags.push(...project.tags)
-      });
-      this.tags = new Set(this.tags)
-      let tagForDrwn: { item_id: number; item_text: any; }[] = []
-      this.tags.forEach((tag: any) => {
-        tagForDrwn.push({
-          item_id: tag, item_text: tag
-        })
-      });
-      this.dropdownList = tagForDrwn;
+    this.isDataLoading = true
+    this._projectsService.getAllProjects()
+      .pipe(
+        finalize(
+          () => { this.isDataLoading = false }
+        )
+      ).subscribe((projects: any) => {
+        this.projects = projects.projects
+        this.projects.forEach(project => {
+          this.tags.push(...project.tags)
+        });
+        this.tags = new Set(this.tags)
+        let tagForDrwn: { item_id: number; item_text: any; }[] = []
+        this.tags.forEach((tag: any) => {
+          tagForDrwn.push({
+            item_id: tag, item_text: tag
+          })
+        });
+        this.dropdownList = tagForDrwn;
 
-    })
+      })
   }
 
   getProjectByTag(tags: any) {
-    this._projectsService.getProjectByTag(tags).subscribe({
-      next: ((resp: any) => {
-        console.log('Projects by tag', resp)
-        this.projects = resp.projects
-      }),
-      error: ((err: any) => {
-        console.log('Error en post tags: ', err)
+    this.isDataLoading = true
+    this._projectsService.getProjectByTag(tags)
+      .pipe(
+        finalize(
+          () => { this.isDataLoading = false }
+        )
+      ).subscribe({
+        next: ((resp: any) => {
+          console.log('Projects by tag', resp)
+          this.projects = resp.projects
+        }),
+        error: ((err: any) => {
+          console.log('Error en post tags: ', err)
+        })
       })
-    })
   }
 
   seeMoreProjects() {
@@ -110,8 +119,6 @@ export class PortfolioComponent implements OnInit {
     this.getProjectByTag(data)
   }
   deSelect(item: any) {
-
-
     if (this.selectedItems.length !== 0) {
       let tags: any = []
       console.log(this.selectedItems)

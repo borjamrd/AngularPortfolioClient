@@ -21,6 +21,8 @@ import { Page404Component } from './components/page404/page404.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { ChartContributionsComponent } from './components/tech/chart-contributions/chart-contributions.component';
 import { ChartProContributionsComponent } from './components/tech/chart-pro-contributions/chart-pro-contributions.component';
+import { RelatedProjectsComponent } from './components/project/related-projects/related-projects.component';
+import { ProjectListPlaceholderComponent } from './components/placeholders/project-list-placeholder/project-list-placeholder.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ChartProContributionsComponent } from './components/tech/chart-pro-cont
     Page404Component,
     AnalyticsComponent,
     ChartContributionsComponent,
-    ChartProContributionsComponent
+    ChartProContributionsComponent,
+    RelatedProjectsComponent,
+    ProjectListPlaceholderComponent
   ],
   imports: [
     ReactiveFormsModule,
