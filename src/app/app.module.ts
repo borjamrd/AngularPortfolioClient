@@ -23,6 +23,7 @@ import { ChartContributionsComponent } from './components/tech/chart-contributio
 import { ChartProContributionsComponent } from './components/tech/chart-pro-contributions/chart-pro-contributions.component';
 import { RelatedProjectsComponent } from './components/project/related-projects/related-projects.component';
 import { ProjectListPlaceholderComponent } from './components/placeholders/project-list-placeholder/project-list-placeholder.component';
+import { ImageProjectComponent } from './components/project/image-project/image-project.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ProjectListPlaceholderComponent } from './components/placeholders/proje
     ChartContributionsComponent,
     ChartProContributionsComponent,
     RelatedProjectsComponent,
-    ProjectListPlaceholderComponent
+    ProjectListPlaceholderComponent,
+    ImageProjectComponent
   ],
   imports: [
     ReactiveFormsModule,

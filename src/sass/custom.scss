@@ -1,5 +1,5 @@
 $white: rgba(255, 255, 255, 0.3);
-
+$black: #000 !default;
 
 body {
     margin: 0 auto;
@@ -20,6 +20,9 @@ h6 {
 
 }
 
+button {
+    box-shadow: 0 .5rem 1rem rgba($black, .15);
+}
 
 
 h1.xxl {
@@ -45,6 +48,10 @@ h1.xxl {
     min-height: 83vh;
     justify-content: center;
     align-items: center;
+}
+
+#img2 {
+    border-radius: 10px !important;
 }
 
 .custom-progress {
@@ -75,6 +82,8 @@ h1.xxl {
     width: 10rem
 }
 
+
+
 @keyframes append-animate {
     from {
         transform: scale(0.8);
@@ -103,6 +112,22 @@ h1.xxl {
     width: 100%;
 }
 
+.imagePortfolio:hover {
+    cursor: pointer;
+    translate: 5px -5px;
+}
+
+.imagePortfolio {
+    transition-duration: 0.2s;
+}
+
+.customIcon {
+    transition-duration: 0.2s;
+}
+
+.customIcon:hover {
+    opacity: 0.5;
+}
 
 
 .custom-card {
@@ -157,16 +182,7 @@ h1.xxl {
     color: black;
 }
 
-.imgProjectSection {
-    width: 100%;
-}
 
-.imgProject {
-    object-fit: cover;
-    width: 100%;
-    max-height: 350px;
-    // border-radius: 14px;
-}
 
 .sectionDescription {
     // padding-right: 70px;
