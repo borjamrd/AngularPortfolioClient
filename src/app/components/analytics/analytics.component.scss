@@ -1,0 +1,10 @@
+#analyticsDesktop iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+}
+
+#analyticsMobile iframe {
+    aspect-ratio: 5 / 4;
+    width: 100%;
+    min-height: 50rem;
+}

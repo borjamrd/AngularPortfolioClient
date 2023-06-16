@@ -194,8 +194,26 @@ h1.xxl {
     color: white !important;
 }
 
+#analyticsDesktop {
+    display: block
+}
+
+#analyticsMobile {
+    display: none;
+}
 
 @media only screen and (max-width: 600px) {
+
+    #analyticsDesktop {
+        display: none
+    }
+
+    #analyticsMobile {
+        display: block;
+    }
+
+
+
     .custom-card {
         width: 100%;
     }
